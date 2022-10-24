@@ -1,6 +1,7 @@
 import React from "react";
 import playStore from "../../../images/playstore.png";
 import appStore from "../../../images/Appstore.png";
+import { FaGithub } from "react-icons/fa"
 import "./Footer.css";
 
 const Footer = () => {
@@ -16,15 +17,11 @@ const Footer = () => {
       <div className="midFooter">
         <h1>ECOMMERCE.</h1>
         <p>High Quality is our first priority</p>
-
-        <p>Copyrights 2021 &copy; MeAbhiSingh</p>
       </div>
 
       <div className="rightFooter">
-        <h4>Follow Us</h4>
-        <a href="http://instagram.com/meabhisingh">Instagram</a>
-        <a href="http://youtube.com/6packprogramemr">Youtube</a>
-        <a href="http://instagram.com/meabhisingh">Facebook</a>
+        <h4><FaGithub/></h4>
+        <a target="_blank" href="https://github.com/prateekv2003/ecomm">Github</a>
       </div>
     </footer>
   );

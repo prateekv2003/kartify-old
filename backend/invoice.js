@@ -1,6 +1,6 @@
 //Import the library into your project
 var easyinvoice = require('easyinvoice');
-var fs = require('fs')
+ 
 var data = {
     //"documentTitle": "RECEIPT", //Defaults to INVOICE
     "currency": "USD",
@@ -52,10 +52,6 @@ var data = {
  
 //Create your invoice! Easy!
 easyinvoice.createInvoice(data, function (result) {
-    /*  
-        5.  The 'result' variable will contain our invoice as a base64 encoded PDF
-            Now let's save our invoice to our local filesystem so we can have a look!
-            We will be using the 'fs' library we imported above for this.
-    */
-    fs.writeFileSync("invoice.pdf", result.pdf, 'base64');
+    //The response will contain a base64 encoded PDF file
+    console.log(result.pdf);
 });

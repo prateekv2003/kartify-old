@@ -1,5 +1,5 @@
 .banner {
-  background-image: url("../../images/cover.jfif");
+  background-image: url("../../images/cover.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -10,6 +10,8 @@
   align-items: center;
   justify-content: center;
   color: white;
+  background-blend-mode: darken;
+  background-color: #4747476b;
 }
 
 .banner > h1 {
