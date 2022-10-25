@@ -3,15 +3,13 @@ import playStore from "../../../images/playstore.png";
 import appStore from "../../../images/Appstore.png";
 import { FaGithub } from "react-icons/fa"
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer id="footer">
       <div className="leftFooter">
-        <h4>DOWNLOAD OUR APP</h4>
-        <p>Download App for Android and IOS mobile phone</p>
-        <img src={playStore} alt="playstore" />
-        <img src={appStore} alt="Appstore" />
+        <Link to="/contact">CONTACT US</Link>
       </div>
 
       <div className="midFooter">

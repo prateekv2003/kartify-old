@@ -14,6 +14,12 @@ footer {
   flex-direction: column;
   align-items: center;
 }
+
+.leftFooter > a{
+  text-decoration: none;
+  font: 900 1.5vmax "Roboto";
+  color: #fff;
+}
 .leftFooter > h4 {
   font-family: "Roboto";
   font-size: 1vmax;
