@@ -7,6 +7,7 @@
     "@material-ui/data-grid": "^4.0.0-alpha.37",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.60",
+    "@reduxjs/toolkit": "^1.8.6",
     "@stripe/react-stripe-js": "^1.4.1",
     "@stripe/stripe-js": "^1.17.1",
     "@testing-library/jest-dom": "^5.14.1",
@@ -25,16 +26,17 @@
     "react-icons": "^4.2.0",
     "react-js-pagination": "^3.0.3",
     "react-material-ui-carousel": "^2.3.1",
-    "react-redux": "^7.2.4",
+    "react-redux": "^7.2.9",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-simple-chatbot": "^0.6.1",
-    "redux": "^4.1.1",
+    "redux": "^4.2.0",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0",
+    "styled-components": "^5.3.6",
     "web-vitals": "^1.1.2",
     "webfontloader": "^1.6.28",
-    "webpack": "^4.44.2",
+    "webpack": "4.44.2",
     "yarn": "^1.22.19"
   },
   "scripts": {
@@ -61,5 +63,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:8081"
+  "proxy": "http://localhost:8080"
 }

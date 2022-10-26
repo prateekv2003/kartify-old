@@ -58,7 +58,7 @@ const Payment = ({ history }) => {
       };
       const { data } = await axios.post(
         "/api/v1/payment/process",
-        paymentData,
+        {...paymentData, ...order},
         config
       );
 
@@ -95,8 +95,8 @@ const Payment = ({ history }) => {
             status: result.paymentIntent.status,
           };
 
-          dispatch(createOrder(order));
-
+          //updating....
+          dispatch(createOrder({...order, ...paymentData}));
           history.push("/success");
         } else {
           alert.error("There's some issue while processing payment ");
