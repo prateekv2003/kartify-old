@@ -87,6 +87,7 @@ const Payment = ({ history }) => {
         payBtn.current.disabled = false;
 
         alert.error(result.error.message);
+        console.log(result.error.message)
       } else {
         if (result.paymentIntent.status === "succeeded") {
           order.paymentInfo = {

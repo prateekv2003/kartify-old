@@ -70,10 +70,12 @@ const Products = ({ match }) => {
           <h2 className="productsHeading">Products</h2>
 
           <div className="products">
-            {products &&
+            {products && products.length>=1 ? 
               products.map((product) => (
                 <ProductCard key={product._id} product={product} />
-              ))}
+              ))
+              :
+              <h1 className="product_not_avl">Product not available!</h1>}
           </div>
 
           <div className="filterBox">
