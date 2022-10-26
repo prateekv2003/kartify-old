@@ -1,5 +1,5 @@
 .banner {
-  background-image: url("../../images/cover.jfif");
+  background-image: url("../../images/cover.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -10,10 +10,12 @@
   align-items: center;
   justify-content: center;
   color: white;
+  background-blend-mode: darken;
+  background-color: #4747476b;
 }
 
 .banner > h1 {
-  margin: 5vmax;
+  margin: 4vmax;
 
   font: 600 2.5vmax "Roboto";
 }
@@ -36,6 +38,39 @@
 .banner > a > button:hover {
   background-color: rgba(255, 255, 255, 0);
   color: white;
+}
+
+.banner > .searchBar {
+  display: flex;
+  width: 50%;
+  border-radius: 0.2rem;
+  overflow: hidden;
+}
+
+.banner > .searchBar > input[type=text]{
+  padding: 1rem 1.5rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.274);
+  color: rgba(0, 0, 0, 0.637);
+  font: 300 1.1vmax cursive;
+  box-sizing: border-box;
+  width: 100%;
+  outline: none;
+  border: none;
+}
+
+.banner > .searchBar > input[type=submit]{
+  padding: 0.1rem 2rem;
+  outline: none;
+  border: none;
+  background-color: tomato;
+  font: 300 1.1vmax "Roboto";
+  cursor: pointer;
+  color: white;
+  transition: all 0.5s;
+}
+
+.banner > .searchBar > input[type="submit"]:hover {
+  background-color: rgb(216, 67, 40);
 }
 
 .banner::after {

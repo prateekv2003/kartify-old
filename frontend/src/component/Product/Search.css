@@ -39,7 +39,7 @@
 }
 
 .searchBox > input[type="submit"]:hover {
-  background-color: rgb(55, 97, 214);
+  background-color: rgb(216, 67, 40);
 }
 
 @media screen and (max-width: 600px) {
