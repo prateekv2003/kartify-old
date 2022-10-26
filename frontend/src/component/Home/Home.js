@@ -43,7 +43,7 @@ const Home = ({ history }) => {
           <MetaData title="ECOMMERCE" />
 
           <div className="banner">
-            <p>Welcome to Ecommerce</p>
+            <p>Welcome to Kartify</p>
             <h1>FIND AMAZING PRODUCTS BELOW</h1>
 
             {/* <a href="#container">
