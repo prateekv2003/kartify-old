@@ -147,7 +147,7 @@ const config = {
     floating: true,
 };
 
-class SimpleForm extends Component {
+class EchatBot extends Component {
   render() {
     return (
       <ChatBot
@@ -164,4 +164,4 @@ class SimpleForm extends Component {
   }
 }
 
-export default SimpleForm;
+export default EchatBot;
