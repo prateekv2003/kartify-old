@@ -259,10 +259,10 @@ class EchatBot extends Component {
   render() {
     return (
       <ChatBot
-      headerTitle1="Speech Recognition"
-      recognitionEnable={true}
-      headerTitle2="Speech Synthesis"  
-      speechSynthesis={{ enable: true, lang: 'en' }}  
+      // headerTitle1="Speech Recognition"
+      // recognitionEnable={true}
+      // headerTitle2="Speech Synthesis"  
+      // speechSynthesis={{ enable: true, lang: 'en' }}  
       handleEnd={this.handleEnd}  
       botAvatar= {pic}    
 
