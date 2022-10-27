@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
 import ChatBot from 'react-simple-chatbot';
+import pic from "../chatbot/botLogo.jpg";
 
 const steps=[
     {
@@ -17,6 +18,16 @@ const steps=[
       id: 'name',
       user: true,
       trigger: '3',
+      validator: (value) => {
+        if (/^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*/.test(value))
+          {
+            return true;
+          }
+        else
+          {
+            return 'Please input alphabet characters only.';
+          }
+     },
     },
     {
       id: '3',
@@ -53,7 +64,51 @@ const steps=[
     },
     {
       id: '5',
-      message: 'This section is pending',
+      message: 'Currently we have following products: ',
+      trigger: 'prod1',
+      // options: [
+      //   {value: 'laptop', label: 'Laptop', trigger: 'again'},
+      //   {value: 'footwear', label: 'Footwear', trigger: 'again'},
+      //   {value: 'tops', label: 'Tops', trigger: 'again'},
+      //   {value: 'attire', label: 'Attire', trigger: 'again'},
+      //   {value: 'smartphone', label: 'Smartphone', trigger: 'again'},
+      //   {value: 'camera', label: 'Camera', trigger: 'again'},
+      // ]
+    },
+    {
+      id: 'prod1',
+      message: 'Laptop',
+      trigger: 'prod2',
+    },
+    {
+      id: 'prod2',
+      message: 'Footwear',
+      trigger: 'prod3',
+    },
+    {
+      id: 'prod3',
+      message: 'Tops',
+      trigger: 'prod4',
+    },
+    {
+      id: 'prod4',
+      message: 'Attire',
+      trigger: 'prod5',
+    },
+    {
+      id: 'prod5',
+      message: 'Smartphone',
+      trigger: 'prod6',
+    },
+    {
+      id: 'prod6',
+      message: 'Camera',
+      trigger: 'buy-message',
+    },
+    {
+      id: 'buy-message',
+      message: 'Please visit our \'Product Page\' to explore more.',
+      trigger: 'ans',
     },
     {
       id: '6',
@@ -63,41 +118,88 @@ const steps=[
     {
       id: 'order1',
       message: '1. Login as user on the website',
-      trigger: 'order2',
+      trigger: 'ok1',
+    },
+    {
+      id: 'ok1',
+      options: [
+        { value: 'skip', label: 'Skip', trigger: 'skip-message' },
+        { value: 'next', label: 'Next', trigger: 'order2' },
+      ],
     },
     {
       id: 'order2',
       message: '2. Go to product section and choose your product',
-      trigger: 'order3',
+      trigger: 'ok2',
+    },
+    {
+      id: 'ok2',
+      options: [
+        { value: 'skip', label: 'Skip', trigger: 'skip-message' },
+        { value: 'next', label: 'Next', trigger: 'order3' },
+      ],
     },
     {
       id: 'order3',
       message: '3. Click on ADD TO CART for that product',
-      trigger: 'order4',
+      trigger: 'ok3',
+    },
+    {
+      id: 'ok3',
+      options: [
+        { value: 'skip', label: 'Skip', trigger: 'skip-message' },
+        { value: 'next', label: 'Next', trigger: 'order4' },
+      ],
     },
     {
       id: 'order4',
       message: '4. Click on proceed to buy',
-      trigger: 'order5',
+      trigger: 'ok4',
+    },
+    {
+      id: 'ok4',
+      options: [
+        { value: 'skip', label: 'Skip', trigger: 'skip-message' },
+        { value: 'next', label: 'Next', trigger: 'order5' },
+      ],
     },
     {
       id: 'order5',
       message: '5. Enter your current address',
-      trigger: 'order6',
+      trigger: 'ok5',
+    },
+    {
+      id: 'ok5',
+      options: [
+        { value: 'skip', label: 'Skip', trigger: 'skip-message' },
+        { value: 'next', label: 'Next', trigger: 'order6' },
+      ],
     },
     {
       id: 'order6',
       message: '6. Complete your payment by using your Debit/Credit card',
-      trigger: 'order7',
+      trigger: 'ok6',
+    },
+    {
+      id: 'ok6',
+      options: [
+        { value: 'skip', label: 'Skip', trigger: 'skip-message' },
+        { value: 'next', label: 'Next', trigger: 'order7' },
+      ],
     },
     {
       id: 'order7',
-      message: '7. Congratulations your product is on the way. Now just enjoy our superfast delivery service',
+      message: '7. Congratulations, your product is on the way. Check your email for the invoice of the product. Now just enjoy our superfast delivery service',
       trigger: 'ans',
     },
     {
+      id: 'skip-message',
+      message: 'Great! You already know the process.',
+      trigger: 'loop',
+    },
+    {
       id: 'ans',
-      message: 'I hope this information is helpful.',
+      message: 'I hope this information was helpful.',
       trigger: 'ask',
     },
     {
@@ -109,13 +211,13 @@ const steps=[
     },
     {
       id: 'again',
-      message: 'Do you want some another help?',
+      message: 'Do you need any more assistance?',
       trigger: 'update-question',
     },
     {
       id: 'sorry',
-      message: 'Sorry, I will try to help you next time.',
-      trigger: 'end-message',
+      message: 'Sorry, Please contact us for your query through the following helpline numbers: 022-90826328/29.',
+      trigger: 'again',
     },
     {
       id: 'update-question',
@@ -126,20 +228,24 @@ const steps=[
     },
     {
       id: 'update-yes',
-      message: 'What?',
-      trigger: 'update-fields',
-    },
-    {
-      id: 'update-fields',
-      options: [
-        { value: 'product', label: 'Check Available Products', trigger: '5' },
-        { value: 'order', label: 'Steps to order a product', trigger: '6' },
-      ],
+      message: 'What I can do for you?',
+      trigger: 'op',
     },
     {
       id: 'end-message',
-      message: 'Thank you for your time! See you next time.',
-      end: true,
+      message: 'Thank you for your time! Nice to talk to you.',
+      trigger: 'loop'
+    },
+    {
+      id: 'loop',
+      message: 'If you need my help next time just click \'Need Help\' given below',
+      trigger: 'need-help'
+    },
+    {
+      id: 'need-help',
+      options: [
+        {value: 'help', label:'Need Help', trigger: 'update-yes'}
+      ],
     }
 ];
 
@@ -147,15 +253,18 @@ const config = {
     floating: true,
 };
 
+
 class EchatBot extends Component {
+
   render() {
     return (
       <ChatBot
       headerTitle1="Speech Recognition"
       recognitionEnable={true}
-      // headerTitle2="Speech Synthesis"
-      // speechSynthesis={{ enable: true, lang: 'en' }}
-        
+      headerTitle2="Speech Synthesis"  
+      speechSynthesis={{ enable: true, lang: 'en' }}  
+      handleEnd={this.handleEnd}  
+      botAvatar= {pic}    
 
       steps={steps}
         {...config}

@@ -70,6 +70,8 @@ const Home = ({ history }) => {
                 <ProductCard key={product._id} product={product} />
               ))}
           </div>
+
+          <EchatBot/>
         </Fragment>
         
       )}
