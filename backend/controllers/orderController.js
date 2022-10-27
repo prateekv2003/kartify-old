@@ -2,7 +2,7 @@ const Order = require("../models/orderModel");
 const Product = require("../models/productModel");
 const ErrorHander = require("../utils/errorhander");
 const catchAsyncErrors = require("../middleware/catchAsyncErrors");
-
+const createInvoice = require('../invoice');
 // Create new Order
 exports.newOrder = catchAsyncErrors(async (req, res, next) => {
   const {
@@ -12,7 +12,7 @@ exports.newOrder = catchAsyncErrors(async (req, res, next) => {
     itemsPrice,
     taxPrice,
     shippingPrice,
-    totalPrice,
+    totalPrice
   } = req.body;
 
   const order = await Order.create({
@@ -27,6 +27,7 @@ exports.newOrder = catchAsyncErrors(async (req, res, next) => {
     user: req.user._id,
   });
 
+  createInvoice(req.user, req.body, order._id);
   res.status(201).json({
     success: true,
     order,

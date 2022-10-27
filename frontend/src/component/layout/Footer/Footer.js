@@ -13,7 +13,8 @@ const Footer = () => {
       </div>
 
       <div className="midFooter">
-        <h1>ECOMMERCE.</h1>
+      {/* <img src="Kartify.png" alt="Kartify" style="width:10px;height:10px;"></img> */}
+        <h1>Kartify</h1>
         <p>High Quality is our first priority</p>
       </div>
 
