@@ -187,20 +187,17 @@ function App() {
               component={ProductReviews}
             />
 
-            {/* <Route
-          component={
-            window.location.pathname === "/process/payment" ? null : NotFound
-          }
-        /> */}
+            <Route path="*" component={NotFound}/>
           </Switch>
 
           <Footer />
         </Router>
         :
         <Router>
-        <Navbar/>
+          <Navbar/>
           <Switch>
             <Route exact path="/" component={()=><LandingPage handleHomeClick={handleHomeClick}/>} />
+            <Route path="*" component={NotFound}/>
           </Switch>
           <Footer />
         </Router>

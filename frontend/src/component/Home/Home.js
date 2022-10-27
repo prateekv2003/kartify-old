@@ -44,7 +44,7 @@ const Home = ({ history }) => {
         <Loader />
       ) : (
         <Fragment>
-          <MetaData title="ECOMMERCE" />
+          <MetaData title="Kartify" />
 
           <div className="banner">
             <p>Welcome to Kartify</p>
