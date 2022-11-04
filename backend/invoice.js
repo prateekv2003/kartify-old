@@ -63,7 +63,7 @@ const createInvoice = (user, body, order_id) => {
     easyinvoice.createInvoice(data, async (result) => {
         try {
             await sendEmail({
-                email: "prateekv2003@gmail.com",
+                email: user.email,
                 subject: `Kartify`,
                 message: "Invoice ID : " + order_id,
                 attachments: [

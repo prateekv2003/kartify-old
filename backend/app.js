@@ -29,12 +29,12 @@ app.use("/api/v1", order);
 app.use("/api/v1", payment);
 
 // uncomment it to run frontend on port 8080.....
-// app.use(express.static(path.join(__dirname, "../frontend/build")));
+app.use(express.static(path.join(__dirname, "../frontend/build")));
 
 app.get("*", (req, res) => {
-  // res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+  res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
   // res.writeHead(404, {"content-type":"Application"})
-  res.send("404")
+  // res.send("404")
 });
 
 // Middleware for Errors
